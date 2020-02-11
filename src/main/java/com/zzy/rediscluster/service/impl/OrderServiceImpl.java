@@ -1,5 +1,6 @@
-package com.zzy.rediscluster.lock;
+package com.zzy.rediscluster.service.impl;
 
+import com.zzy.rediscluster.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,12 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author:zzy
  * @date: 2020/2/11
- * @time: 12:10
+ * @time: 16:50
  */
 @Service
-public class RedisLock {
+public class OrderServiceImpl implements OrderService {
 
-    private static final Logger logger = LoggerFactory.getLogger(RedisLock.class);
+    private static final Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
@@ -26,10 +27,11 @@ public class RedisLock {
     /**
      * 库存操作
      *
-     * @param lockKey
+     * @param productId
      * @return
      */
-    public String deductStock(String productId) {
+    @Override
+    public String createOrder(String productId) {
         String lockKey = productId + "LOCK";
         String clientId = UUID.randomUUID().toString();
         try {

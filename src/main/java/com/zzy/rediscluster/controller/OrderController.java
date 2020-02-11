@@ -1,6 +1,7 @@
 package com.zzy.rediscluster.controller;
 
 import com.zzy.rediscluster.lock.RedisLock;
+import com.zzy.rediscluster.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class OrderController {
     private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
 
     @Autowired
-    private RedisLock redisLock;
+    private OrderService orderService;
 
     /**
      * 创建订单
@@ -32,7 +33,7 @@ public class OrderController {
     public String deductStock(String productId) {
         String result = null;
         try {
-            result = redisLock.deductStock(Objects.requireNonNull(productId));
+            result = orderService.createOrder(Objects.requireNonNull(productId));
             logger.info("下单成功！");
         } catch (Exception e) {
             e.printStackTrace();
