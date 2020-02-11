@@ -11,7 +11,7 @@
     <groupId>com.zzy</groupId>
     <artifactId>rediscluster</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>rediscluster</name>
+    <name>redis-cluster</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
