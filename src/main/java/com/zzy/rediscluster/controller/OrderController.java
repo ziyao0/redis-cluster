@@ -1,6 +1,5 @@
 package com.zzy.rediscluster.controller;
 
-import com.zzy.rediscluster.lock.RedisLock;
 import com.zzy.rediscluster.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +25,7 @@ public class OrderController {
 
     /**
      * 创建订单
+     *
      * @param productId
      * @return
      */
