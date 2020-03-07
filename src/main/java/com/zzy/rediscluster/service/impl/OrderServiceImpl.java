@@ -13,10 +13,12 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+
 /**
- * @author:zzy
- * @date: 2020/2/11
- * @time: 16:50
+ * @Page com.zzy.rediscluster.service.impl
+ * @Author Sevon
+ * @Date 2020/3/7 20:59
+ * @Version 1.0
  */
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -25,6 +27,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
     @Autowired
     private Redisson redisson;
 

@@ -7,17 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
- * @author:zzy
- * @date: 2020/2/11
- * @time: 12:43
+ * @Page com.zzy.rediscluster.controller
+ * @Author Sevon
+ * @Date 2020/3/7 20:59
+ * @Version 1.0
  */
 @RestController
-public class OrderController {
+class OrderController {
+
     private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
 
     @Autowired
@@ -34,7 +34,12 @@ public class OrderController {
         String result = null;
         try {
             result = orderService.createOrder(Objects.requireNonNull(productId));
-            logger.info("下单成功！");
+
+            if (!"SUCCESS".equals(result)) {
+                logger.info("下单失败！！！");
+                return "库存不足！！";
+            }
+            logger.info("下单成功！！！");
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("系统异常：" + e);

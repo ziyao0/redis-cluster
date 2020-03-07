@@ -1,9 +1,11 @@
 package com.zzy.rediscluster.service;
 
+
 /**
- * @author:zzy
- * @date: 2020/2/11
- * @time: 16:51
+ * @Page com.zzy.rediscluster.service
+ * @Author Sevon
+ * @Date 2020/3/7 20:59
+ * @Version 1.0
  */
 public interface OrderService {
     /**
