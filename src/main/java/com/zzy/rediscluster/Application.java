@@ -18,7 +18,7 @@ public class Application {
 
         Config config = new Config();
         //单机版配置
-        config.useSingleServer().setAddress("redis://192.168.32.244:6379").setDatabase(0);
+        config.useSingleServer().setAddress("redis://39.100.197.157:6379").setDatabase(0);
         //集群 配置
         /*config.useClusterServers()
                 .addNodeAddress("redis://192.168.32.245:6379")

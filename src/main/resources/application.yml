@@ -5,5 +5,6 @@ spring:
   redis:
     database: 0
     timeout: 5000
-    host: 192.168.32.244
+    host: 39.100.197.157
     port: 6379
+    password: zzy
